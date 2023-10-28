@@ -1,0 +1,39 @@
+[project]
+name = "tablang"
+version = "0.0.1"
+description = "Language for tabular data manipulation"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "Maxime Filippini", email = "maxime.filippini@gmail.com" }
+]
+classifiers = []
+dependencies = []
+
+[project.optional-dependencies] 
+dev = ["ruff", "pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/maxime-filippini/tablang"
+
+[tool.setuptools]
+package-data = {}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["tablang"]
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["E", "F", "D", "N", "ANN", "TRY"]
+ignore = ["ANN101"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
